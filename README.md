@@ -5,7 +5,10 @@
 ## 参考
 
 [qiankun文档](https://qiankun.umijs.org/zh)
+
 [基于qiankun落地部署微前端爬”坑“记](https://juejin.im/post/6854573214564089864)
+
+[vue + qiankun 快速实现前端微服务](https://segmentfault.com/a/1190000021872481)
 
 ## 介绍
 
