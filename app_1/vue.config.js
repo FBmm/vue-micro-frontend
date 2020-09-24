@@ -1,8 +1,27 @@
+const path = require('path')
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
+const packageName = "microApp1";
 module.exports = {
   devServer: {
     port: 8081,
     headers: {
       'Access-Control-Allow-Origin': '*',
+    }
+  },
+  configureWebpack: {
+    name: packageName,
+    output: {
+      library: 'microApp1',
+      libraryTarget: 'umd',
+      jsonpFunction: `webpackJsonp_${packageName}`,
+    },
+    resolve: {
+      alias: {
+        vue$: "vue/dist/vue.esm.js",
+        '@': resolve('src')
+      }
     }
   },
   chainWebpack: config => {
