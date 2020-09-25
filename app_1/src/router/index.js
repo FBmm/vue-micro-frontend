@@ -6,10 +6,10 @@ Vue.use(VueRouter)
 
 const routes = [
   { 
-    path: '/app1',
+    path: '/',
     component: Layout,
     children: [{
-      path: 'form',
+      path: '/app1/form',
       name: 'form',
       component: () => import('@/pages/form'),
       meta: { title: 'form', icon: 'form' }

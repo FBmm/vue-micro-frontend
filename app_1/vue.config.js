@@ -13,7 +13,7 @@ module.exports = {
   configureWebpack: {
     name: packageName,
     output: {
-      library: 'microApp1',
+      library: `${packageName}-[name]`,
       libraryTarget: 'umd',
       jsonpFunction: `webpackJsonp_${packageName}`,
     },

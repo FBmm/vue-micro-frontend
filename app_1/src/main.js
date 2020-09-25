@@ -1,4 +1,7 @@
-window.__webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__
+if (window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__) {
+  // eslint-disable-next-line no-undef
+  __webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__
+}
 import Vue from 'vue'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -6,13 +9,17 @@ import './style/index.scss'
 import router from './router'
 import Layout from './layout'
 
-function render() {
+function render({container}) {
   Vue.use(ElementUI);
   Vue.config.productionTip = false
   new Vue({
     router,
     render: h => h(Layout),
-  }).$mount('#app1')
+  }).$mount(container?.querySelector("#sub-container"))
+}
+
+if (!window.__POWERED_BY_QIANKUN__) {
+  render({container: window.document});
 }
 
 /**
@@ -20,7 +27,7 @@ function render() {
  * 通常我们可以在这里做一些全局变量的初始化，比如不会在 unmount 阶段被销毁的应用级别的缓存等。
  */
 export async function bootstrap() {
-  console.log('react app bootstraped');
+  console.log('micro app1 bootstraped');
 }
 /**
  * 应用每次进入都会调用 mount 方法，通常我们在这里触发应用的渲染方法
