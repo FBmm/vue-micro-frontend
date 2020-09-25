@@ -12,7 +12,7 @@ registerMicroApps([
   {
     name: 'microApp1', // app name registered
     entry: '//localhost:8081',
-    container: '#container',
+    container: '#sub-container',
     activeRule: '/app1',
   },
 ]);
