@@ -5,7 +5,7 @@ function resolve(dir) {
 const packageName = "microApp1";
 module.exports = {
   devServer: {
-    port: 8081,
+    port: 8001,
     headers: {
       'Access-Control-Allow-Origin': '*',
     }
