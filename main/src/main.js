@@ -11,10 +11,16 @@ Vue.config.productionTip = false
 registerMicroApps([
   {
     name: 'microApp1', // app name registered
-    entry: '//localhost:8081',
+    entry: '//localhost:8001',
     container: '#sub-container',
     activeRule: '/app1',
   },
+  {
+    name: 'microApp2', // app name registered
+    entry: '//localhost:8002',
+    container: '#sub-container',
+    activeRule: '/app2',
+  }
 ]);
 
 start();
